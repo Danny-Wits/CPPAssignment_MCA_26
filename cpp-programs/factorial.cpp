@@ -1,10 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int factorial(int n)
-{
-    return (n <= 1) ? 1 : n * factorial(n - 1);
-}
+int factorial(int n);
+
 int main()
 {
 
@@ -14,4 +12,18 @@ int main()
     cout << "Factorial of " << n << " is " << factorial(n);
 
     return 0;
+}
+
+int factorial(int n)
+{
+    if (n <= 1)
+    {
+
+        return 1;
+    }
+    else
+    {
+
+        return n * factorial(n - 1);
+    }
 }
