@@ -1,5 +1,5 @@
 #include <iostream>
-#include "arrayprint.h"
+
 using namespace std;
 int sum(int ar[], int size)
 {
@@ -21,7 +21,7 @@ int main()
     {
         cin >> arr[i];
     }
-    print(arr, n);
+ 
     cout << "Sum of the elements of the array : " << sum(arr, n);
     return 0;
 }

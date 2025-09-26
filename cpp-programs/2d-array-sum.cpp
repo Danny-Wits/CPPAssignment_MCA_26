@@ -27,6 +27,11 @@ int main()
 
     int ar1[3][3] = {{1, 2, 3}, {2, 3, 4}, {4, 5, 6}};
     int ar2[3][3] = {{3, 2, 1}, {4, 3, 2}, {6, 5, 4}};
+    cout << "Array1" << endl;
+    print(ar1);
+    cout << "Array2" << endl;
+    print(ar2);
+    cout << "Sum " << endl;
     sum(ar1, ar2);
     return 0;
 }

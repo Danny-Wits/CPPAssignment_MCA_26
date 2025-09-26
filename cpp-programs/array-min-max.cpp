@@ -10,12 +10,10 @@ int main()
     int arr[100], n;
     cout << "Enter number of elements: ";
     cin >> n;
-
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
-
     cout << "Min : " << min(arr, n) << endl;
     cout << "Min : " << max(arr, n);
     return 0;
