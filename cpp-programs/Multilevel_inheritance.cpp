@@ -1,5 +1,5 @@
 // Multilevel inheritance
-
+// Program that demonstrates multilevel inheritance in C++
 #include <iostream>
 using namespace std;
 class Animal
