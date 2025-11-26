@@ -1,4 +1,5 @@
 // Single Level Inheritance
+// Write a program to demonstrate single level inheritance in C++
 #include <iostream>
 using namespace std;
 

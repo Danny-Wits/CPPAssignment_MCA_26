@@ -1,4 +1,5 @@
 // Multiple Inheritance
+// Program that demonstrates multiple inheritance in C++
 #include <iostream>
 using namespace std;
 
