@@ -21,3 +21,14 @@ Program that demonstrates constructor 35
 Program that demonstrates Polymorphism in C++ 36
 Program that demonstrates Function overloading in C++ 37
 Program that demonstrates Class hierarchies in C++ 38
+
+
+Create the STUDENTS table with the above structure. 52
+Add a new column email VARCHAR(50) to the table. 53
+Modify the size of the city column to VARCHAR(30). 53
+Rename the column name to student_name. 53
+Add a UNIQUE constraint on email. 54
+Drop the column city. 54
+Rename the table STUDENTS to STUDENT_RECORDS. 54
+Delete all rows using (Explain differences):Delete & Truncate 55
+Drop the entire table. 55

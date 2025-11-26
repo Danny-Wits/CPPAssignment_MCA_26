@@ -1,4 +1,4 @@
--- Active: 1761904244118@@127.0.0.1@3306@university
+-- Active: 1690987685319@@127.0.0.1@3306@5thsemsql
 -- Create a database
 CREATE DATABASE EMPLOYEE;
 
@@ -131,6 +131,8 @@ ALTER TABLE students ADD COLUMN email VARCHAR(50);
 
 ALTER Table students MODIFY COLUMN city VARCHAR(30);
 
+ALTER TABLE students RENAME COLUMN name to student_name;
+
 ALTER TABLE students MODIFY COLUMN email VARCHAR(30) UNIQUE;
 
 ALTER Table students DROP COLUMN city;
@@ -139,4 +141,20 @@ ALTER TABLE students RENAME students_record;
 
 SELECT * FROM students_record;
 
+show TABLES;
+
 DROP TABLE students_record;
+
+-- 8.	Delete all rows using:
+-- o	TRUNCATE
+-- o	DELETE
+DELETE FROM students_record WHERE 1 = 1;
+
+TRUNCATE TABLE students_record;
+
+SELECT
+    CONSTRAINT_NAME,
+    CONSTRAINT_TYPE
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE
+    TABLE_NAME = 'students';
