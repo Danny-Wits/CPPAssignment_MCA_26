@@ -1,4 +1,4 @@
--- Active: 1690987685319@@127.0.0.1@3306@company_db
+-- Active: 1761904244118@@127.0.0.1@3306@university
 -- Create a database
 CREATE DATABASE EMPLOYEE;
 
@@ -24,6 +24,7 @@ CREATE TABLE students (
 
 -- Display all tables in a database
 SHOW TABLES;
+
 -- Describe a table : Used to display the structure of a table
 DESCRIBE students;
 
@@ -105,7 +106,7 @@ HAVING
 DELETE FROM students WHERE department = 'IT';
 
 -- • Write a query to rename a column
-Alter TABLE students RENAME COLUMN name TO s_name;
+Alter TABLE students RENAME COLUMN s_name TO name;
 
 DESCRIBE students;
 
@@ -114,3 +115,28 @@ Select department, avg(marks) as avg_marks
 FROM students
 GROUP BY
     department;
+
+CREATE Table Students (
+    roll_no int PRIMARY KEY NOT NULL,
+    name VARCHAR(50),
+    department VARCHAR(20),
+    city VARCHAR(20)
+);
+
+DROP Table students;
+
+SELECT * FROM students;
+
+ALTER TABLE students ADD COLUMN email VARCHAR(50);
+
+ALTER Table students MODIFY COLUMN city VARCHAR(30);
+
+ALTER TABLE students MODIFY COLUMN email VARCHAR(30) UNIQUE;
+
+ALTER Table students DROP COLUMN city;
+
+ALTER TABLE students RENAME students_record;
+
+SELECT * FROM students_record;
+
+DROP TABLE students_record;

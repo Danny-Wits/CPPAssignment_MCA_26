@@ -35,7 +35,7 @@ public:
     Engineer(string name, int age, float salary, string company, int experience)
         : Human(age), Employee(name, salary, company)
     {
-        this->experience = experience;
+        Engineer::experience = experience;
     }
     void introduce() override
     {
