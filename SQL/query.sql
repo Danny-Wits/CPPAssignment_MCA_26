@@ -158,3 +158,107 @@ SELECT
 FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
 WHERE
     TABLE_NAME = 'students';
+
+-- Table with employees id name salary and department
+
+CREATE TABLE employees (
+    id int PRIMARY KEY,
+    name text,
+    salary float,
+    department VARCHAR(20)
+);
+
+ALTER TABLE employees MODIFY COLUMN id int AUTO_INCREMENT;
+
+INSERT INTO
+    employees (name, salary, department)
+VALUES ('John Doe', 5000.0, 'IT'),
+    ('Jane Doe', 6000.0, 'HR'),
+    (
+        'Bob Smith',
+        7000.0,
+        'Finance'
+    ),
+    (
+        'Alice Johnson',
+        8000.0,
+        'Marketing'
+    ),
+    ('Mike Brown', 9000.0, 'Sales'),
+    ('Emily Davis', 10000.0, 'IT'),
+    ('Sarah Lee', 11000.0, 'HR'),
+    (
+        'David Kim',
+        12000.0,
+        'Finance'
+    ),
+    (
+        'Kate Taylor',
+        13000.0,
+        'Marketing'
+    ),
+    (
+        'James Wilson',
+        14000.0,
+        'Sales'
+    ),
+    (
+        'Olivia Martin',
+        15000.0,
+        'IT'
+    ),
+    ('Julia Hall', 16000.0, 'HR'),
+    (
+        'Kevin White',
+        17000.0,
+        'Finance'
+    ),
+    (
+        'Laura Mitchell',
+        18000.0,
+        'Marketing'
+    ),
+    (
+        'Brian Harris',
+        19000.0,
+        'Sales'
+    ),
+    ('Rachel Patel', 20000.0, 'IT'),
+    (
+        'Michael Jackson',
+        21000.0,
+        'HR'
+    ),
+    (
+        'Samantha Singh',
+        22000.0,
+        'Finance'
+    ),
+    (
+        'Lisa Nguyen',
+        23000.0,
+        'Marketing'
+    ),
+    (
+        'Thomas Lee',
+        24000.0,
+        'Sales'
+    );
+
+SELECT * FROM employees;
+
+SELECT name, employees.department
+FROM employees
+    JOIN (
+        SELECT department, MAX(salary) as max_salary
+        FROM employees
+        GROUP BY
+            department
+    ) as Max_T ON employees.department = Max_T.department
+    AND employees.salary = Max_T.max_salary;
+
+SELECT department, MAX(salary) as max_salary
+        FROM employees
+        GROUP BY
+            department HAVING salary = MAX(salary);
+            
