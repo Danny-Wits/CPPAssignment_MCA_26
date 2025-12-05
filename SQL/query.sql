@@ -1,4 +1,4 @@
--- Active: 1690987685319@@127.0.0.1@3306@5thsemsql
+-- Active: 1761904244118@@127.0.0.1@3306@university
 -- Create a database
 CREATE DATABASE EMPLOYEE;
 
@@ -247,7 +247,7 @@ VALUES ('John Doe', 5000.0, 'IT'),
 
 SELECT * FROM employees;
 
-SELECT name, employees.department
+SELECT name, employees.department, employees.salary
 FROM employees
     JOIN (
         SELECT department, MAX(salary) as max_salary
@@ -258,7 +258,56 @@ FROM employees
     AND employees.salary = Max_T.max_salary;
 
 SELECT department, MAX(salary) as max_salary
-        FROM employees
-        GROUP BY
-            department HAVING salary = MAX(salary);
-            
+FROM employees
+GROUP BY
+    department
+HAVING
+    salary = MAX(salary);
+
+--     STUDENT
+-- SID	SName	DeptID
+-- 1	Rahul	10
+-- 2	Aisha	20
+-- 3	Mohan	10
+-- 4	Riya	30
+-- 5	Jaya	40
+-- DEPARTMENT
+-- DeptID	DeptName
+-- 10	Computer Science
+-- 20	Mathematics
+-- 30	Statistics
+-- 40	Physics
+
+CREATE TABLE Student (
+    SID int PRIMARY KEY,
+    SName varchar(50),
+    DeptID int
+);
+
+CREATE TABLE Department (
+    DeptID int PRIMARY KEY,
+    DeptName varchar(50)
+);
+
+INSERT INTO
+    Student (SID, SName, DeptID)
+VALUES (1, 'Rahul', 10),
+    (2, 'Aisha', 20),
+    (3, 'Mohana', 10),
+    (4, 'Riya', 30),
+    (5, 'Jaya', 40);
+
+INSERT INTO
+    Department (DeptID, DeptName)
+VALUES (10, 'Computer Science'),
+    (20, 'Mathematics'),
+    (30, 'Statistics'),
+    (40, 'Physics');
+
+SELECT * FROM student;
+
+SELECT * FROM department;
+
+SELECT `SName`, `DeptName`
+FROM student
+    JOIN department on student.DeptID = department.DeptID;
