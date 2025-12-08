@@ -1,5 +1,5 @@
 // Class hierarchies :
-// Hybrid inheritance and Dimond problem
+// Hybrid inheritance and Diamond problem
 #include <iostream>
 using namespace std;
 class Animal

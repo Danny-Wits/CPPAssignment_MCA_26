@@ -1,4 +1,4 @@
--- Active: 1761904244118@@127.0.0.1@3306@university
+-- Active: 1690987685319@@127.0.0.1@3306@5thsemsql
 -- Create a database
 CREATE DATABASE EMPLOYEE;
 
@@ -281,7 +281,8 @@ HAVING
 CREATE TABLE Student (
     SID int PRIMARY KEY,
     SName varchar(50),
-    DeptID int
+    DeptID int,
+    Foreign Key (DeptID) REFERENCES Department (DeptID)
 );
 
 CREATE TABLE Department (
@@ -304,10 +305,12 @@ VALUES (10, 'Computer Science'),
     (30, 'Statistics'),
     (40, 'Physics');
 
+    
+
 SELECT * FROM student;
 
 SELECT * FROM department;
 
-SELECT `SName`, `DeptName`
+SELECT *
 FROM student
-    JOIN department on student.DeptID = department.DeptID;
+    INNER JOIN department On student.`DeptID` = department.`DeptID`;
